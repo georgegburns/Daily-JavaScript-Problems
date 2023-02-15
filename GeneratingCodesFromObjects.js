@@ -137,34 +137,34 @@ function fiscalCode(arr){
 
         //D.O.B and gender
         // Slicing the last two numbers from the D.O.B
-        code = code + arr[x].dob.slice(-2)
+        code = code + arr[x].dob.slice(-2);
 
         // Splitting the D.O.B and extracting the month and day
-        let month = arr[x].dob.split('/')[1]
-        let day = arr[x].dob.split('/')[0]
+        let month = arr[x].dob.split('/')[1];
+        let day = arr[x].dob.split('/')[0];
 
         // Adding the respective value from the months lookup array using the month as the key
-        code = code + months[month.toString()]
+        code = code + months[month.toString()];
 
         // Separating depending on gender
         if (arr[x].gender == 'M'){
             // If length is > 2 then adding 0 to start
             if (day.length < 2){
-                code = code + ('0' + day)
+                code = code + ('0' + day);
             }
             // Otherwise adding day without changing
             else{
-                code = code + day
+                code = code + day;
             }
         }
         else {
             // If female adding 40 to the day and then adding
-            day = parseInt(day) + 40
-            code = code + day
-        }
+            day = parseInt(day) + 40;
+            code = code + day;
+        };
 
-        console.log(code)
+        console.log(code);
     }
 }
 
-fiscalCode(test)
+fiscalCode(test);
